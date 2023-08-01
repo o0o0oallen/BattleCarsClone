@@ -1,0 +1,104 @@
+<html>
+
+<head>
+    <title>www.layabox.com</title>
+    <meta charset='utf-8' />
+    <meta name='renderer' content='webkit' />
+    <meta name='viewport' content='width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no'
+    />
+    <meta name='apple-mobile-web-app-capable' content='yes' />
+    <meta name='full-screen' content='true' />
+    <meta name='x5-fullscreen' content='true' />
+    <meta name='360-fullscreen' content='true' />
+    <meta name='laya' screenorientation='landscape' />
+    <meta http-equiv='expires' content='0' />
+    <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1' />
+    <meta http-equiv='expires' content='0' />
+    <meta http-equiv='Cache-Control' content='no-siteapp' />
+    <script src="minigame.js"></script>
+</head>
+
+<body>
+    <script type="text/javascript">
+        var isStopPlay = true;
+        var NewLogin = true;
+
+        function showInterstitialMini(func) {
+            console.log("=========插屏========")
+            /*let isInterstitialReady = MiniGameAds.isInterstitialReady();
+            if (isInterstitialReady) {
+                MiniGameAds.showInterstitial().then(() => {
+                    console.info("新接口播放插屏广告: 成功");
+                    func && func();
+                }).catch(e => {
+                    console.error("新接口播放插屏广告: 失败，原因: " + e.message);
+                    func && func();
+                });
+            } else {
+                func && func();
+                console.info("插屏广告没有加载成功，无法播放");
+            }*/
+        }
+
+        let suc = null;
+        function showVideoMini(func) {
+            suc = func;
+            suc && suc(!0);
+            suc = null;
+            console.info("新接口播放激励广告: 成功");
+            /*let isRewardVideoReady = MiniGameAds.isRewardvideoReady();
+            if (isRewardVideoReady) {
+                MiniGameAds.showRewardedVideo().then(() => {
+                    suc && suc(!0);
+                    suc = null;
+                    console.info("新接口播放激励广告: 成功");
+                }).catch(e => {
+                    suc && suc(!1);
+                    suc = null;
+                    console.error("新接口播放激励广告: 失败，原因: " + e.message);
+                });
+            } else {
+                suc && suc(!1);
+                suc = null;
+                console.info("激励视频没有加载成功，无法播放");
+            }*/
+        }
+
+        let isBannerReady = null;
+        function showBannerMini() {
+            /*isBannerReady = MiniGameAds.isBannerReady();
+            console.log("是否展示banner==>", isBannerReady)
+            if (isBannerReady) {
+                // @ts-ignore
+                MiniGameAds.showBanner().then(() => {
+                    console.info("====> show banner success");
+                }).catch(e => {
+                    console.error("====> show banner error: " + e.message);
+                });
+            } else {
+                console.info("====> banner not ready");
+            }*/
+        }
+
+        function hideBannerMini() {
+            /*console.log("隐藏banner")
+            MiniGameAds.hideBanner().then(() => {
+                console.info("====> hide banner success");
+            }).catch(e => {
+                console.error("====> hide banner error: " + e.message);
+            });*/
+        }
+    </script>
+    <script type="text/javascript">
+        function loadLib(url) {
+            var script = document.createElement("script");
+            script.async = false;
+            script.src = url;
+            document.body.appendChild(script);
+        }
+    </script>
+    <script src="platform.js"></script>
+    <script type="text/javascript" src="index.js"></script>
+</body>
+
+</html>
